@@ -4,8 +4,8 @@ require('dotenv/config');
 
 module.exports = defineConfig({
 
-  defaultCommandTimeout: 10000, // aumentar o tempo limite padrão
-  pageLoadTimeout: 30000, // aumentar o tempo limite de carregamento da página, se necessário
+  defaultCommandTimeout: 10000, 
+  pageLoadTimeout: 30000,
   screenshotOnRunFailure: false,
   retries: 3,
   e2e: {

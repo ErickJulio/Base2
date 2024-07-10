@@ -1,11 +1,10 @@
 {
-  "name": "mantis",
+  "name": "",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "cypress run --browser chrome",
-    "cypress:run": "cypress run --headless --browser chrome"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
