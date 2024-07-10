@@ -2,7 +2,7 @@ const url = Cypress.config('url')
 Cypress.Commands.add('login', () => {
     const user = Cypress.config('user');
     const password = Cypress.config('password');
-    
+
 
     cy.visit(`${url}/login_page.php`);
     cy.get('input[name="username"]').type(user, { log: false });
@@ -80,15 +80,41 @@ Cypress.Commands.add('criarTarefaNegativo', () => {
 
 });
 Cypress.Commands.add('acessarVerTarefas', () => {
-  cy.contains('span.menu-text', 'Ver Tarefas').click();
-  cy.url().should('eq', `${url}/view_all_bug_page.php`);
-  cy.get('h4.widget-title.lighter').should('be.visible').and('contain', 'Visualizando Tarefas');
+    cy.contains('span.menu-text', 'Ver Tarefas').click();
+    cy.url().should('eq', `${url}/view_all_bug_page.php`);
+    cy.get('h4.widget-title.lighter').should('be.visible').and('contain', 'Visualizando Tarefas');
 });
 Cypress.Commands.add('acessarDetalhesTarefa', (idTarefa) => {
-  cy.get('td.column-id a').contains(idTarefa).click();
-  cy.url().should('eq', `${url}/view.php?id=${idTarefa}`);
-  cy.get('h4.widget-title.lighter').contains('Ver Detalhes da Tarefa').should('be.visible');
-  cy.get('h4.widget-title.lighter').contains('Atividades').should('be.visible');
+    cy.get('td.column-id a').contains(idTarefa).click();
+    cy.url().should('eq', `${url}/view.php?id=${idTarefa}`);
+    cy.get('h4.widget-title.lighter').contains('Ver Detalhes da Tarefa').should('be.visible');
+    cy.get('h4.widget-title.lighter').contains('Atividades').should('be.visible');
 });
 
 
+Cypress.Commands.add('verificarAnotacao', () => {
+    cy.get('.widget-title.lighter')
+        .should('be.visible')
+        .and('contain', 'Adicionar Anotação');
+});
+
+Cypress.Commands.add('verificarHistorico', () => {
+    cy.get('.widget-header.widget-header-small')
+        .should('be.visible')
+    cy.get('td.small-caption a')
+        .contains('Erick_Santos')
+});
+Cypress.Commands.add('validaCampos', () => {
+    cy.get('div.widget-header.widget-header-small').should('exist');
+    cy.get('div.widget-header.widget-header-small').contains('Relatados por Mim').should('exist');
+    cy.get('div.widget-header.widget-header-small').contains('Resolvidos').should('exist');
+    cy.get('div.widget-header.widget-header-small').contains('Modificados Recentemente (30 Dias)').should('exist');
+    cy.get('div.widget-header.widget-header-small').contains('Monitorados por Mim').should('exist');
+    cy.get('div.widget-header.widget-header-small').contains('Linha do tempo').should('exist');
+    cy.get('div.nav-recent.hidden-xs').contains('Recentemente Visitado:').should('exist');
+    cy.get('div.nav-recent.hidden-xs a').should('have.length', 5).each((link) => {
+        cy.wrap(link)
+            .should('have.attr', 'href')
+            .and('include', '/view.php?id=');
+    });
+});

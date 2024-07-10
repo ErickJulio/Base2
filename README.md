@@ -19,8 +19,6 @@ Este arquivo contém testes relacionados ao processo de login no sistema.
   - **Descrição:** Verifica o comportamento quando uma senha incorreta é utilizada no login.
   - **Teste:** `cy.senhaIncorreta();`
 
-  Todos os comandos estão definidos no arquivo `commands.js` do Cypress.
-
 ---
 
 ## 02-criarTarefa.cy.js
@@ -46,12 +44,28 @@ Este arquivo contém testes relacionados à criação de tarefas no sistema, ap�
   - **Descrição:** Testa a validação de tarefas criadas anteriormente.
   - **Teste:** `cy.acessarVerTarefas(); cy.acessarDetalhesTarefa('1027');`
 
-  Todos os comandos estão definidos no arquivo `commands.js` do Cypress.
-
 ---
 
 ## 03-verTarefas.cy.js
 
+**Descrição:**
+Este arquivo contém testes relacionados à visualização de tarefas no sistema.
 
+**Specs:**
 
-  Todos os comandos estão definidos no arquivo `commands.js` do Cypress.
+- **Validar Tarefas Feitas - Caminho Feliz**
+  - **Descrição:** Verifica os campos de uma anotação específica após acessar os detalhes de uma tarefa.
+  - **Teste:** Veja o código para os detalhes completos.
+
+---
+
+## 04-minhaVisao.cy.js
+
+**Descrição:**
+Este arquivo contém testes relacionados à validação da página principal do sistema após o login.
+
+**Specs:**
+
+- **Validar Página Principal**
+  - **Descrição:** Valida diversos campos e funcionalidades disponíveis na página principal.
+  - **Teste:** Veja o código para os detalhes completos.
