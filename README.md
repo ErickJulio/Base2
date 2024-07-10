@@ -55,7 +55,7 @@ Este arquivo contém testes relacionados à visualização de tarefas no sistema
 
 - **Validar Tarefas Feitas - Caminho Feliz**
   - **Descrição:** Verifica os campos de uma anotação específica após acessar os detalhes de uma tarefa.
-  - **Teste:** Veja o código para os detalhes completos.
+  - **Teste:** `cy.acessarVerTarefas(); cy.acessarDetalhesTarefa('1027'); cy.verificarAnotacao(); cy.verificarHistorico();`
 
 ---
 
@@ -68,4 +68,9 @@ Este arquivo contém testes relacionados à validação da página principal do 
 
 - **Validar Página Principal**
   - **Descrição:** Valida diversos campos e funcionalidades disponíveis na página principal.
-  - **Teste:** Veja o código para os detalhes completos.
+  - **Teste:** `cy.validaCampos();`
+
+
+  Todos os comandos estão definidos no arquivo commands.js do Cypress.
+
+---
