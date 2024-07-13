@@ -1,0 +1,29 @@
+name: Docker Build and Test
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    services:
+      docker:
+        image: docker:stable-dind
+        options: --privileged  
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Show Docker info
+        run: docker info
+
+      - name: Build Docker image
+        run: docker build -t meu_projeto .
+
+      - name: Run Docker container
+        run: docker run --rm meu_projeto
