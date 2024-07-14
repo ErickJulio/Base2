@@ -9,7 +9,7 @@ module.exports = defineConfig({
   retries: 3,
   e2e: {
     setupNodeEvents(on, config) {
-      require('cypress-mochawesome-reporter/plugin')(on); 
+      (on); 
 
 
     },
@@ -18,12 +18,4 @@ module.exports = defineConfig({
     "url": process.env.URL
 
   },
-  reporter: "mochawesome",
-  reporterOptions: {
-    reportDir: "cypress/reports/mocha",
-    overwrite: false,
-    html: true,
-    json: false
-
-  }
 });
