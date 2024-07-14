@@ -4,20 +4,9 @@
 Este arquivo inclui testes relacionados ao processo de login no sistema. Para garantir a segurança das credenciais de login, utilizei variáveis de ambiente (dotenv) neste projeto. Esse método permite que informações sensíveis sejam mantidas fora do código-fonte principal e configuradas de forma segura no ambiente de execução.
 
 ---
-## Relatório de Testes com Mochawesome
-
-Este projeto utiliza o `cypress-mochawesome-reporter` para gerar relatórios detalhados dos testes executados com Cypress.
-
-Executando os Testes com Mochawesome Reporter
-
-Para executar os testes e gerar relatórios usando o Mochawesome Reporter, utilize o seguinte comando:
-
-bash
-`npx cypress run --reporter mochawesome`
----
 ## Configuração do Ambiente
 
-O ambiente Docker foi configurado para garantir que todas as operações, incluindo as executadas via GitHub Actions, utilizem a codificação UTF-8.
+O Docker foi configurado para garantir que todas as operações, incluindo as executadas via GitHub Actions, utilizem a codificação UTF-8.
 
 ---
 ## 01-login.cy.js
