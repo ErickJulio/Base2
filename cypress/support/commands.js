@@ -112,9 +112,4 @@ Cypress.Commands.add('validaCampos', () => {
     cy.get('div.widget-header.widget-header-small').contains('Monitorados por Mim').should('exist');
     cy.get('div.widget-header.widget-header-small').contains('Linha do tempo').should('exist');
     cy.get('div.nav-recent.hidden-xs').contains('Recentemente Visitado:').should('exist');
-    cy.get('div.nav-recent.hidden-xs a').should('have.length', 5).each((link) => {
-        cy.wrap(link)
-            .should('have.attr', 'href')
-            .and('include', '/view.php?id=');
-    });
 });

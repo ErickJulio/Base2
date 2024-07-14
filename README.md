@@ -15,7 +15,11 @@ Para executar os testes e gerar relatórios usando o Mochawesome Reporter, utili
 bash
 `npx cypress run --reporter mochawesome`
 ---
+## Configuração do Ambiente
 
+O ambiente Docker foi configurado para garantir que todas as operações, incluindo as executadas via GitHub Actions, utilizem a codificação UTF-8.
+
+---
 ## 01-login.cy.js
 
 
