@@ -27,6 +27,6 @@ RUN npm install
 COPY . .
 
 RUN mkdir -p /app/cypress/screenshots \
-    && mkdir -p /app/cypress/reports/mocha/screenshots
+    && mkdir -p /app/cypress/reports/mocha
 
 ENTRYPOINT ["npx", "cypress", "run"]
