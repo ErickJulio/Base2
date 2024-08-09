@@ -1,4 +1,4 @@
-# Processo Seletivo Base2
+# Base2
 
 **Descrição:**
 Este arquivo inclui testes relacionados ao processo de login no sistema. Para garantir a segurança das credenciais de login, utilizei variáveis de ambiente (dotenv) neste projeto. Esse método permite que informações sensíveis sejam mantidas fora do código-fonte principal e configuradas de forma segura no ambiente de execução.
